@@ -13,121 +13,121 @@ func TestTwoSum(t *testing.T) {
 		expected []int
 	}{
 		{
-			name:     "Базовый случай с положительными числами",
+			name:     "Basic case with positive numbers",
 			nums:     []int{2, 7, 11, 15},
 			target:   9,
 			expected: []int{0, 1},
 		},
 		{
-			name:     "Индексы в конце массива",
+			name:     "Indices at end of array",
 			nums:     []int{3, 2, 4},
 			target:   6,
 			expected: []int{1, 2},
 		},
 		{
-			name:     "С отрицательными числами",
+			name:     "With negative numbers",
 			nums:     []int{-1, -2, -3, 5, 10},
 			target:   7,
 			expected: []int{2, 4},
 		},
 		{
-			name:     "Оба числа отрицательные",
+			name:     "Both numbers negative",
 			nums:     []int{-10, 5, 2, -5},
 			target:   -15,
 			expected: []int{0, 3},
 		},
 		{
-			name:     "С нулём в массиве",
+			name:     "With zero in array",
 			nums:     []int{0, 4, 3, 0},
 			target:   0,
 			expected: []int{0, 3},
 		},
 		{
-			name:     "Ноль + положительное число",
+			name:     "Zero plus positive number",
 			nums:     []int{0, 1, 2, 3},
 			target:   3,
 			expected: []int{1, 2},
 		},
 		{
-			name:     "Одинаковые элементы (разные индексы)",
+			name:     "Same elements different indices",
 			nums:     []int{5, 5, 5, 5},
 			target:   10,
 			expected: []int{0, 1},
 		},
 		{
-			name:     "Несколько дубликатов",
+			name:     "Multiple duplicates",
 			nums:     []int{1, 1, 1, 2, 2, 3},
 			target:   4,
 			expected: []int{3, 4},
 		},
 		{
-			name:     "Массив из двух элементов",
+			name:     "Array of two elements",
 			nums:     []int{1, 2},
 			target:   3,
 			expected: []int{0, 1},
 		},
 		{
-			name:     "Два элемента с нулём",
+			name:     "Two elements with zero",
 			nums:     []int{0, 0},
 			target:   0,
 			expected: []int{0, 1},
 		},
 		{
-			name:     "Большие положительные числа",
+			name:     "Large positive numbers",
 			nums:     []int{1000000, 2000000, 3000000},
 			target:   3000000,
 			expected: []int{0, 1},
 		},
 		{
-			name:     "Большой диапазон значений",
+			name:     "Large range of values",
 			nums:     []int{-1000000, 1, 1000000},
 			target:   0,
 			expected: []int{0, 2},
 		},
 		{
-			name:     "Решение в начале массива",
+			name:     "Solution at beginning of array",
 			nums:     []int{1, 2, 3, 4, 5},
 			target:   3,
 			expected: []int{0, 1},
 		},
 		{
-			name:     "Решение в конце массива",
+			name:     "Solution at end of array",
 			nums:     []int{1, 2, 3, 4, 5},
 			target:   9,
 			expected: []int{3, 4},
 		},
 		{
-			name:     "Нет решения - сумма слишком большая",
+			name:     "No solution sum too large",
 			nums:     []int{1, 2, 3},
 			target:   100,
 			expected: nil,
 		},
 		{
-			name:     "Нет решения - сумма слишком маленькая",
+			name:     "No solution sum too small",
 			nums:     []int{1, 2, 3},
 			target:   0,
 			expected: nil,
 		},
 		{
-			name:     "Пустой массив",
+			name:     "Empty array",
 			nums:     []int{},
 			target:   0,
 			expected: nil,
 		},
 		{
-			name:     "Массив с одним элементом",
+			name:     "Array with single element",
 			nums:     []int{5},
 			target:   10,
 			expected: nil,
 		},
 		{
-			name:     "Смешанные положительные и отрицательные",
+			name:     "Mixed positive and negative",
 			nums:     []int{-5, -2, 0, 3, 8, 10},
 			target:   5,
 			expected: []int{0, 5},
 		},
 		{
-			name:     "Последовательные числа",
+			name:     "Consecutive numbers",
 			nums:     []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
 			target:   11,
 			expected: []int{4, 5},
@@ -150,7 +150,7 @@ func TestTwoSum(t *testing.T) {
 			if !slices.Equal(result, tt.expected) {
 				if len(result) == 2 && len(tt.expected) == 2 {
 					if result[0] == tt.expected[1] && result[1] == tt.expected[0] {
-						t.Logf("twoSum(%v, %d) = %v (альтернативный порядок, но OK)", tt.nums, tt.target, result)
+						t.Logf("twoSum(%v, %d) = %v (alternative order but OK)", tt.nums, tt.target, result)
 						return
 					}
 				}
